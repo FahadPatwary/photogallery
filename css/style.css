@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+*,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: "Roboto", sans-serif;
+}
+h1 {
+  font-size: 3rem;
+  text-align: center;
+  font-weight: 700;
+  margin: 50px;
+}
+.photo-gallary {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.photo-frame {
+  background: indianred;
+  height: 200px;
+  margin: 20px;
+  overflow: hidden;
+  position: relative;
+}
+.photo-frame img {
+  width: 110%;
+
+  transition: all 0.2s ease-in-out;
+}
+.data {
+  position: absolute;
+  top: 40%;
+  width: 80%;
+  left: 10px;
+  color: aliceblue;
+  background: rgba(54, 54, 54, 0.308);
+  visibility: hidden;
+  transition: all 0.2s ease-in-out;
+}
+.photo-frame:hover .data {
+  visibility: visible;
+}
+.photo-frame:hover.photo-frame img {
+  transform: scale(1.5);
+}
+
+@media screen and (max-width: 400px) {
+  .photo-gallary {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media screen and (min-width: 400px) and (max-width: 688px) {
+  .photo-gallary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 689px) and (max-width: 999px) {
+  .photo-gallary {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
